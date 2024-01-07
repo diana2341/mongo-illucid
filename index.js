@@ -7,10 +7,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 const ObjectID = require("mongodb").ObjectID;
 var mongodb = require("mongodb");
+require('dotenv').config();
 
 const MongoClient = require("mongodb").MongoClient;
 MongoClient.connect(
-	"mongodb+srv://diana2341:LJWw7SWUtmNwavsF@cluster0.xtynd.mongodb.net/?retryWrites=true&w=majority",
+	process.env.MONGO_URL,
 	{ useUnifiedTopology: true }
 )
 	.then((client) => {
@@ -56,8 +57,8 @@ MongoClient.connect(
 	})
 	.catch((error) => console.error(error));
 
-app.listen('https://mongo-illucid.herokuapp.com', function () {
-	console.log("listening on 3000");
+	app.listen(3001, function () {
+		console.log("listening on 3000");
 });
 
 // app.get("/", (req, res) => {
