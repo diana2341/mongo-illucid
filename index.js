@@ -8,6 +8,8 @@ app.use(cors());
 const ObjectID = require("mongodb").ObjectID;
 var mongodb = require("mongodb");
 require('dotenv').config();
+const PORT = process.env.PORT || 3000;
+
 
 const MongoClient = require("mongodb").MongoClient;
 MongoClient.connect(
@@ -57,7 +59,7 @@ MongoClient.connect(
 	})
 	.catch((error) => console.error(error));
 
-	app.listen(3001, function () {
+	app.listen(PORT, function () {
 		console.log("listening on 3000");
 });
 
