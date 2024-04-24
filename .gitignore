@@ -1,10 +1,6 @@
-.DS_Store
 node_modules/
-/dist/
-.nuxt/
-.output/
 
-.storybook/
+
 
 # local env files
 .env.local
@@ -25,9 +21,4 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# Release script related
-release*
-!release*.yaml
-tag-nodejs*
 
-coverage
